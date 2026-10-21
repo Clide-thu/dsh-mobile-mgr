@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Platform Material theme only: no AndroidX, no AppCompat. minSdk 26 gives us
+     Theme.Material natively. v0.2.0 uses a custom in-layout top bar instead of
+     the platform ActionBar, because targetSdk 35 forces edge-to-edge on
+     Android 15 and the platform ActionBar/content inset split is unreliable. -->
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/brand</item>
+        <item name="android:colorPrimaryDark">@color/brand</item>
+        <item name="android:colorAccent">@color/brand_light</item>
+        <item name="android:statusBarColor">@color/brand</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorControlActivated">@color/brand_light</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <!-- Brand status bar is dark: request light (white) system icons. -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="SectionLabel" parent="android:Widget.Material.TextView">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="ChipLabel" parent="android:Widget.Material.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:background">@drawable/bg_chip_neutral</item>
+        <item name="android:textColor">@color/chip_neutral_text</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="PrimaryButton" parent="android:Widget.Material.Button">
+        <item name="android:backgroundTint">@color/brand</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <style name="SecondaryButton" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textColor">@color/brand</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <style name="DangerButton" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textColor">@color/status_error</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <!-- Content label + value styles used by key dialogs. -->
+    <style name="MemoText" parent="android:Widget.Material.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+</resources>

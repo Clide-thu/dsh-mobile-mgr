@@ -1,0 +1,21 @@
+# Portable build toolchain (gigabytes, reproducible via tools/setup-toolchain.mjs)
+.toolchain/
+
+# Build intermediates (the signed, final artifact lives in dist/)
+build/
+
+# Local release artifacts: the APK is attached to a GitHub Release, not committed.
+dist/
+
+# Release signing key: a personal signing identity, not source. Back it up
+# separately if you want future APKs to upgrade over the installed app in place;
+# never publish it (anyone holding it can sign a same-package update).
+keystore/
+
+# Editor / OS noise
+.idea/
+*.iml
+.vscode/
+Thumbs.db
+Desktop.ini
+*.log

@@ -1,0 +1,11 @@
+# Keep source files LF on every platform so builds/diffs are reproducible.
+* text=auto eol=lf
+
+# Binary-ish assets (none are committed today, but guard future additions).
+*.png binary
+*.jpg binary
+*.webp binary
+*.apk binary
+*.jks binary
+*.keystore binary
+*.jar binary

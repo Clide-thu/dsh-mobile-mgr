@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DSH 远程主机</string>
+
+    <!-- Main list -->
+    <string name="empty_hosts">还没有主机。\n先导入 SSH 配置，或手动添加一台。</string>
+    <string name="import_ssh_config">导入 SSH 配置</string>
+    <string name="add_host">添加主机</string>
+    <string name="menu_trusted_host_keys">已信任的主机密钥…</string>
+    <string name="menu_stop_all">全部断开</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_about">关于</string>
+    <string name="open">打开</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="ok">确定</string>
+    <string name="back">返回</string>
+
+    <!-- Host row / status chips -->
+    <string name="status_no_credential">未配置凭证</string>
+    <string name="status_configured">已配置</string>
+    <string name="status_connecting">连接中…</string>
+    <string name="status_connected">已连接 127.0.0.1:%1$d</string>
+    <string name="status_failed">连接失败</string>
+    <string name="via_proxy_jump">（经 %1$s）</string>
+    <string name="direct_url_mode">直接网址</string>
+    <string name="row_long_press_hint">长按可断开隧道或删除主机</string>
+
+    <!-- Dialogs -->
+    <string name="no_credential_title">还没有 DSH 凭证</string>
+    <string name="no_credential_message">这台主机还没有保存远端 dsh web 的凭证。现在去配置吗？</string>
+    <string name="host_key_title">确认 SSH 主机密钥</string>
+    <string name="host_key_message">首次连接到 %1$s。\n\n密钥类型：%2$s\n指纹：%3$s\n\n请确认这和你在服务器上看到的一致（例如 ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub）。信任后这台主机的密钥会被记住；以后若发生变化会阻止连接。</string>
+    <string name="host_key_trust">信任并连接</string>
+    <string name="host_key_reject">取消连接</string>
+    <string name="open_failed_title">打开失败</string>
+    <string name="connect_timeout">连接超时：25 秒内没有完成隧道建立。请检查网络或跳板机。</string>
+    <string name="delete_confirm_title">删除主机</string>
+    <string name="delete_confirm_message">确定删除「%1$s」及其保存的凭证吗？此操作不可撤销。</string>
+    <string name="close_tunnel">断开隧道</string>
+    <string name="no_browser">没有找到可用的浏览器，无法打开网址。</string>
+
+    <!-- Edit screen -->
+    <string name="edit_title_new">添加主机</string>
+    <string name="edit_title_edit">编辑主机</string>
+    <string name="field_alias">别名（唯一标识，如 my-server）</string>
+    <string name="field_host_name">SSH 主机名 / IP（留空则用别名）</string>
+    <string name="field_user">SSH 用户名</string>
+    <string name="field_port">SSH 端口（默认 22）</string>
+    <string name="field_auth_type">SSH 认证方式</string>
+    <string name="auth_password">密码</string>
+    <string name="auth_key">私钥</string>
+    <string name="field_password">密码</string>
+    <string name="field_private_key">私钥内容（PEM 或 OpenSSH 格式）</string>
+    <string name="field_key_passphrase">私钥口令（可选）</string>
+    <string name="import_key_file">从文件导入私钥…</string>
+    <string name="field_proxy_jump">跳板机（可选：user@host:port 或列表中的别名）</string>
+    <string name="field_access_mode">打开方式</string>
+    <string name="access_tunnel">SSH 隧道（推荐）</string>
+    <string name="access_direct">直接网址</string>
+    <string name="field_credential_url">DSH 凭证（远端 dsh web 打印的 http://127.0.0.1:端口/?token=…）</string>
+    <string name="field_direct_url">直接打开的网址</string>
+    <string name="credential_hint_tunnel">只保存端口和 token；选择「通过外部浏览器连接」时 token 会短暂出现在浏览器地址栏（与桌面端一致）。</string>
+    <string name="credential_hint_direct">用于已经通过反代 / 内网穿透 / tailnet 暴露的地址。</string>
+    <string name="reset_host_key">重置此主机的密钥信任</string>
+    <string name="save_failed">保存失败：%1$s</string>
+    <string name="field_required">请填写「%1$s」</string>
+    <string name="credential_invalid">凭证无效：%1$s</string>
+
+    <!-- Import screen -->
+    <string name="import_title">导入 SSH 配置</string>
+    <string name="import_hint">把电脑上的 ~/.ssh/config 内容粘贴到这里，或从文件选择。\n手机无法读取其他应用的 ~/.ssh 目录，因此用“导入”代替自动读取。Include 指令在手机上无法展开，会给出警告。</string>
+    <string name="import_pick_file">选择文件…</string>
+    <string name="import_parse">解析预览</string>
+    <string name="import_apply">导入 %1$d 台主机</string>
+    <string name="import_result">识别到 %1$d 台主机，%2$d 条警告。</string>
+    <string name="import_nothing">没有识别到任何具体主机（通配 Host 不会被导入）。</string>
+    <string name="import_failed">解析失败：%1$s</string>
+    <string name="import_identity_warning">SSH 配置里的 IdentityFile 无法在手机上直接读取。请在「SSH 密钥管理」里生成或导入密钥，再在主机编辑页选择。</string>
+
+    <!-- Notification -->
+    <string name="notif_channel_name">SSH 隧道</string>
+    <string name="notif_channel_desc">保持远端 DSH 主机的 SSH 隧道连接</string>
+    <string name="notif_title">DSH 远程主机</string>
+    <string name="notif_text_one">1 台主机已连接</string>
+    <string name="notif_text_many">%1$d 台主机已连接</string>
+    <string name="notif_action_stop">全部断开</string>
+
+    <!-- Trusted host keys screen -->
+    <string name="trusted_keys_title">已信任的主机密钥</string>
+    <string name="trusted_keys_empty">还没有信任任何主机密钥。</string>
+    <string name="trusted_keys_clear_all">清除全部信任</string>
+    <string name="trusted_keys_cleared">已清除 %1$d 条主机密钥信任</string>
+
+    <!-- About -->
+    <string name="about_title">关于</string>
+    <string name="about_message">DSH 远程主机 v%1$s\n\n把远端 DeepSeek Harness 的 Web UI 经 SSH 隧道带到手机上的内置页面或外部浏览器。\n\n凭证使用 Android Keystore 加密保存在本机；token 不会写入日志。\n\n构建：无 Gradle 的离线工具链（见 docs/build.md）。</string>
+
+    <!-- ===== UI additions (ui-app) ===== -->
+    <!-- Host row -->
+    <string name="status_no_ssh_auth">缺少 SSH 认证</string>
+    <string name="row_credential_tunnel">端口 %1$d · token %2$s</string>
+    <string name="row_credential_missing">未配置 DSH 凭证</string>
+    <string name="row_direct_url">直接网址：%1$s</string>
+    <string name="row_direct_url_missing">未配置直接网址</string>
+    <string name="action_disconnect">断开隧道</string>
+    <string name="hosts_count">%1$d 台主机</string>
+
+    <!-- Toasts / short feedback -->
+    <string name="saved_toast">已保存</string>
+    <string name="deleted_toast">已删除「%1$s」</string>
+    <string name="tunnel_closed_toast">已断开「%1$s」的隧道</string>
+    <string name="no_tunnel_running">当前没有进行中的隧道</string>
+    <string name="connect_in_progress">正在连接，请稍候…</string>
+    <string name="connect_closed">连接在完成前被关闭。</string>
+    <string name="notifications_denied_hint">未授予通知权限：隧道仍会运行，但通知栏不会显示状态。</string>
+    <string name="no_credential_toast">这台主机还没有 DSH 凭证</string>
+    <string name="operation_failed">操作失败：%1$s</string>
+    <string name="service_unavailable">无法启动隧道服务（可能被系统的后台限制阻止），请把应用放到前台后重试。</string>
+    <string name="file_picker_missing">没有找到可用的文件选择器。</string>
+    <string name="all_tunnels_stopped">已断开全部隧道</string>
+    <string name="close">关闭</string>
+    <string name="go_edit">去编辑</string>
+
+    <!-- Edit screen extras -->
+    <string name="label_alias">别名</string>
+    <string name="label_user">SSH 用户名</string>
+    <string name="label_port">SSH 端口</string>
+    <string name="alias_exists">别名「%1$s」已存在，请换一个</string>
+    <string name="field_invalid_port">端口必须是 1-65535 的数字</string>
+    <string name="auth_required_password">请填写 SSH 密码（或在认证方式里切换到私钥）</string>
+    <string name="auth_required_key">请先选择一个 SSH 密钥（可在「SSH 密钥管理」里生成或导入）</string>
+    <string name="credential_required">SSH 隧道模式需要填写 DSH 凭证 URL</string>
+    <string name="credential_ok">✓ 端口 %1$d，token %2$s</string>
+    <string name="credential_saved_masked">已保存：端口 %1$d，token %2$s（留空保持不变）</string>
+    <string name="credential_empty_hint">粘贴 dsh web 打印的完整 URL，会自动解析出端口与 token</string>
+    <string name="direct_url_ok">✓ 网址有效</string>
+    <string name="direct_url_invalid">网址无效：需要 http:// 或 https:// 开头且包含主机名</string>
+    <string name="key_file_loaded">已导入私钥（%1$d 字节）</string>
+    <string name="key_file_too_large">私钥文件过大（上限 1 MiB）</string>
+    <string name="key_file_failed">读取私钥文件失败：%1$s</string>
+    <string name="key_file_picker_title">选择私钥文件</string>
+    <string name="key_not_private_key_title">无法识别为私钥</string>
+    <string name="key_not_private_key_message">选中的文件首行不是 -----BEGIN …，看起来不是 PEM / OpenSSH 私钥文件。仍然把它填入私钥框吗？</string>
+    <string name="key_use_anyway">仍然使用</string>
+    <string name="ed25519_unsupported_warning">检测到 ed25519 私钥：部分 Android 版本不支持该密钥类型，建议改用 RSA/ECDSA 私钥（详见 docs/android-ssh-guide.md §6.3）。</string>
+    <string name="key_autofill_disabled_hint">出于安全考虑，这个输入框不参与系统自动填充 / 输入法学习。</string>
+    <string name="identity_files_info">SSH 配置中的 IdentityFile：%1$s\n手机无法直接读取这些路径，请粘贴私钥内容或改用密码。</string>
+    <string name="reset_key_confirm_title">重置主机密钥信任</string>
+    <string name="reset_key_confirm_message">将忘记这台主机已保存的 SSH 主机密钥，下次连接时会重新要求确认指纹。继续？</string>
+    <string name="reset_key_done">已重置「%1$s」的主机密钥信任</string>
+    <string name="reset_key_none">这台主机当前没有已保存的主机密钥信任</string>
+    <string name="reset_key_failed">重置失败：%1$s</string>
+
+    <!-- Import screen extras -->
+    <string name="import_empty">请先粘贴 SSH 配置内容，或选择一个 config 文件。</string>
+    <string name="import_skipped_wildcards">跳过 %1$d 个通配 pattern。</string>
+    <string name="import_warnings_label">警告：</string>
+    <string name="import_warnings_none">没有警告。</string>
+    <string name="import_preview_label">预览（前 %1$d 台）：</string>
+    <string name="import_preview_more">…另有 %1$d 台未显示</string>
+    <string name="import_confirm_title">确认导入</string>
+    <string name="import_confirm_apply">确认导入</string>
+    <string name="import_confirm_message">将导入 %1$d 台主机：新增 %2$d 台，更新 %3$d 台。\n已有主机保留已保存的认证与凭证，只刷新连接字段（主机名/用户/端口/跳板机）。</string>
+    <string name="import_apply_done">已导入：新增 %1$d 台，更新 %2$d 台</string>
+    <string name="import_apply_failed">导入失败：%1$s</string>
+    <string name="import_file_loaded">已选择：%1$s（%2$d 字节）</string>
+    <string name="import_file_selected">已选择：%1$s</string>
+    <string name="import_file_too_large">文件超过 1 MiB，无法导入。</string>
+    <string name="import_file_failed">读取文件失败：%1$s</string>
+    <string name="import_reparse">重新解析</string>
+    <string name="import_nothing_hint">没有具体主机可导入。通配 Host 会被跳过，请确认粘贴的是完整的 ssh config。</string>
+
+    <!-- Trusted host keys dialog -->
+    <string name="trusted_keys_count">共 %1$d 条</string>
+    <string name="trusted_keys_clear_confirm_title">清除全部信任</string>
+    <string name="trusted_keys_clear_confirm_message">确定清除全部已信任的主机密钥吗？之后连接会重新要求确认指纹。</string>
+    <string name="trusted_keys_clear_failed">清除失败：%1$s</string>
+    <string name="trusted_keys_added_at">加入时间 %1$s</string>
+    <string name="trusted_keys_fingerprint">指纹 %1$s</string>
+
+    <!-- Error mapping (docs/app-spec.md §8) -->
+    <string name="error_bad_request">配置不完整或格式错误。</string>
+    <string name="error_unknown_host">主机不存在（可能已被删除）。</string>
+    <string name="error_needs_credentials">SSH 认证失败或缺少凭证——请检查密码/私钥/DSH 凭证。</string>
+    <string name="error_unreachable">连不上远端：网络、端口、跳板机或转发失败。</string>
+    <string name="error_host_key_changed">主机密钥已变更，可能被中间人攻击；确认后可在菜单清除信任。</string>
+    <string name="error_internal">内部错误（message 已脱敏）。</string>
+    <string name="error_detail">\n\n详情：%1$s</string>
+
+    <!-- ===== v0.2.0: custom top bar ===== -->
+    <string name="menu_more">更多</string>
+
+    <!-- ===== v0.2.0: SSH key management (docs/app-spec.md §7.4/§8) ===== -->
+    <string name="menu_ssh_keys">SSH 密钥管理…</string>
+    <string name="empty_ssh_keys_entry">SSH 密钥管理…</string>
+    <string name="ssh_keys_title">SSH 密钥管理</string>
+    <string name="ssh_keys_empty">还没有 SSH 密钥。\n生成一把本 App 专用的密钥，或导入已有的密钥对。</string>
+    <string name="ssh_key_generate">生成新密钥</string>
+    <string name="ssh_key_import">导入密钥对</string>
+    <string name="ssh_key_manage">管理 SSH 密钥…</string>
+    <string name="ssh_key_count">共 %1$d 把密钥</string>
+    <string name="ssh_key_spinner_item">%1$s · %2$s</string>
+    <string name="field_ssh_key">SSH 密钥</string>
+    <string name="ssh_key_select_hint">从本机密钥库选择一把密钥；私钥只保存在本 App 的加密存储里。</string>
+    <string name="ssh_key_no_keys_hint">还没有 SSH 密钥。请先点「管理 SSH 密钥…」生成或导入一把。</string>
+    <string name="ssh_key_selected_hint">已选择 %1$s（%2$s）\n指纹 %3$s</string>
+    <string name="ssh_key_required">请先选择一个 SSH 密钥（可点「管理 SSH 密钥…」生成或导入）</string>
+    <string name="ssh_key_missing">密钥已不存在，可能已被删除，请重新选择。</string>
+    <string name="ssh_key_usage">被 %1$d 台主机使用</string>
+    <string name="ssh_key_usage_none">未被任何主机使用</string>
+    <string name="ssh_key_created">创建时间 %1$s</string>
+    <string name="ssh_key_source">来源 %1$s</string>
+    <string name="ssh_key_source_generated">App 生成</string>
+    <string name="ssh_key_source_imported">导入</string>
+    <string name="ssh_key_source_migrated">旧版迁移</string>
+    <string name="ssh_key_type">类型 %1$s</string>
+
+    <!-- Generate key dialog -->
+    <string name="generate_key_title">生成 SSH 密钥</string>
+    <string name="field_key_label">密钥名称</string>
+    <string name="field_rsa_bits">RSA 位数</string>
+    <string name="rsa_bits_2048">2048</string>
+    <string name="rsa_bits_3072">3072（推荐）</string>
+    <string name="rsa_bits_4096">4096</string>
+    <string name="generate_key_explanation">私钥只保存在本 App 的加密存储里，不会上传。\n生成后请复制公钥，追加到远端 ~/.ssh/authorized_keys。</string>
+    <string name="generate_in_progress">正在生成…（最长约 2 秒）</string>
+    <string name="generate_failed">生成失败：%1$s</string>
+    <string name="key_label_required">请填写密钥名称</string>
+    <string name="key_created">已生成密钥「%1$s」</string>
+
+    <!-- Import key dialog -->
+    <string name="import_key_title">导入 SSH 密钥对</string>
+    <string name="field_import_private_key">私钥内容（PEM / OpenSSH 格式）</string>
+    <string name="field_import_passphrase">私钥口令（可选）</string>
+    <string name="field_import_public_key">公钥行（可选；填写后会校验与私钥是否匹配）</string>
+    <string name="import_key_action">导入</string>
+    <string name="import_in_progress">正在导入…</string>
+    <string name="import_key_failed">导入失败：%1$s</string>
+    <string name="key_imported">已导入密钥「%1$s」</string>
+    <string name="import_private_key_required">请粘贴私钥内容或从文件选择</string>
+    <string name="import_private_key_format">这看起来不是 PEM / OpenSSH 私钥（首行应以 -----BEGIN 开头）</string>
+
+    <!-- Public key dialog -->
+    <string name="public_key_title">公钥</string>
+    <string name="public_key_hint">把下面这一行追加到远端 ~/.ssh/authorized_keys。公钥可以公开，请不要发送私钥。</string>
+    <string name="copy_public_key">复制公钥</string>
+    <string name="copied_to_clipboard">已复制到剪贴板</string>
+    <string name="clipboard_failed">复制失败：无法访问系统剪贴板</string>
+
+    <!-- Key detail dialog -->
+    <string name="key_detail_meta">类型：%1$s\n指纹：%2$s\n创建时间：%3$s\n来源：%4$s</string>
+    <string name="key_detail_hosts_label">被哪些主机使用</string>
+    <string name="key_detail_public_label">公钥</string>
+    <string name="key_detail_private_label">私钥</string>
+    <string name="key_detail_private_hidden">••••••••（默认隐藏，仅在本机显示）</string>
+    <string name="show_private_key">显示私钥</string>
+    <string name="hide_private_key">隐藏私钥</string>
+    <string name="copy_private_key">复制私钥</string>
+    <string name="show_private_confirm_title">确认显示私钥</string>
+    <string name="show_private_confirm_message">私钥会以明文显示在屏幕上。请确认周围环境安全，用完可关闭对话框。继续？</string>
+    <string name="copy_private_warning_title">复制私钥</string>
+    <string name="copy_private_warning_message">私钥会进入系统剪贴板，其他应用可能读取。粘贴完成后建议清空剪贴板。继续？</string>
+    <string name="rename_key_title">重命名密钥</string>
+    <string name="rename_key_done">已重命名为「%1$s」</string>
+    <string name="delete_key_title">删除密钥</string>
+    <string name="delete_key_confirm_message">确定删除密钥「%1$s」？此操作不可撤销。</string>
+    <string name="delete_key_used_warning">该密钥正被 %1$d 台主机使用。删除后这些主机将无法用私钥登录，请先在主机编辑页改选密钥。</string>
+    <string name="key_deleted">已删除密钥「%1$s」</string>
+    <string name="key_save_failed">保存失败：%1$s</string>
+    <string name="key_delete_failed">删除失败：%1$s</string>
+
+    <!-- ===== v0.2.2: copy open URL (long-press host row) ===== -->
+    <string name="menu_copy_open_url">复制打开网址（含 token）</string>
+    <string name="copy_open_url_warning_title">复制打开网址</string>
+    <string name="copy_open_url_warning_message">该网址包含 DSH token，会进入系统剪贴板，其他应用可能读取。粘贴到浏览器打开后，建议清空剪贴板。继续？</string>
+    <string name="copy_open_url_done">已复制，粘贴到浏览器打开</string>
+    <string name="copy_open_url_need_tunnel">请先点「打开」建立隧道后再复制网址</string>
+    <string name="copy_open_url_need_token">该主机没有保存 token，无法复制含 token 的网址</string>
+    <string name="copy_open_url_failed">复制失败：无法访问系统剪贴板</string>
+
+    <!-- ===== v0.2.4: A = copy token URL + open browser home / B = built-in WebView ===== -->
+    <!-- A path: MainActivity when the GLOBAL "通过外部浏览器连接" setting is ON.
+         No dialog; settings-page help/warning replaces the old per-host switch. -->
+    <string name="append_token_copied_hint">网址已复制，请在浏览器地址栏粘贴打开</string>
+    <string name="append_token_browser_failed">无法打开默认浏览器首页；网址已复制，请手动打开浏览器后在地址栏粘贴</string>
+    <string name="append_token_copy_failed">复制网址失败：无法访问系统剪贴板</string>
+
+    <!-- ===== v0.2.5: global settings page (replaces the per-host append-token switch) ===== -->
+    <string name="settings_title">设置</string>
+    <string name="settings_section_connection">连接与打开</string>
+    <string name="settings_section_display">显示</string>
+    <string name="settings_browser_mode_label">通过外部浏览器连接</string>
+    <string name="settings_browser_mode_hint">开启：隧道就绪后复制含 token 的网址并打开浏览器首页，需要你手动粘贴；关闭（推荐）：使用 App 内置页面自动完成登录。</string>
+    <string name="settings_browser_mode_help_title">「通过外部浏览器连接」说明</string>
+    <string name="settings_browser_mode_help_message">开启（外部浏览器）：\n· 隧道建立后，App 把含 token 的完整网址 http://127.0.0.1:端口/?token=… 原样复制到剪贴板，然后打开默认浏览器首页，请你到地址栏粘贴并打开。\n· 为什么不能直接跳转：Android 浏览器会把「外部 App 发起 + 303 重定向」当成跨站导航，拦截远端 SameSite=Strict 的登录 cookie，直接跳转常显示 authentication required；手动粘贴属于你自己发起的导航，可以正常登录。\n· 注意：token 会进入剪贴板，其他应用可能读取；打开后建议清空剪贴板。\n\n关闭（推荐，默认）：\n· App 内置页面（系统 WebView）自动完成 token 交换并登录，不打开外部浏览器，地址栏不含 token。\n· token 不会交给外部浏览器，也不会写入日志。\n\n两种方式都会保存凭证（端口 + token）；切换开关不影响已保存的凭证。</string>
+    <string name="settings_browser_mode_warn_title">token 会复制到剪贴板</string>
+    <string name="settings_browser_mode_warn_message">你已开启「通过外部浏览器连接」：\n\n1. 打开主机时，含 token 的完整网址会以敏感内容复制到系统剪贴板；\n2. App 只会打开默认浏览器的首页，需要你在地址栏手动粘贴打开；\n3. App 不会把该网址直接交给浏览器跳转——Android 浏览器会按 SameSite 策略拦截登录 cookie，直接跳转通常显示 authentication required。\n\n如果不想让 token 进剪贴板，可以关闭此开关：App 会在内置页面自动登录。\n（随时可点开关旁的 ? 查看完整说明。）</string>
+    <string name="settings_collapse_label">自动收起内置页面的顶部横栏</string>
+    <string name="settings_collapse_hint">仅在 App 内置页面生效：向下滚动时自动收起，滚回页面顶部或点按收起后的横栏可展开。</string>
+    <string name="settings_collapse_help_title">「顶部横栏收起」说明</string>
+    <string name="settings_collapse_help_message">开启（默认）：\n· 在内置页面里向下滚动超过一小段距离后，顶部横栏自动收起；\n· 收起后只保留一行小字的主机名（约 32dp 高），点按这一行即可展开；\n· 横栏右侧的收起按钮可随时手动收起；\n· 页面滚回顶部时会自动展开。\n\n关闭：顶部横栏始终完整显示，不提供收起按钮。\n\n为什么不做成完全隐藏：完全隐藏后需要一个始终悬浮的「呼出」按钮，会覆盖住 WebView 的部分内容，还可能挡住页面按钮。保留一行可点按的主机名既不遮挡页面，又能随时展开。</string>
+    <string name="settings_note">设置立即生效并保存在本机；这里不保存任何密码、token 或密钥。</string>
+    <string name="help_symbol">?</string>
+    <string name="help_desc">查看说明</string>
+
+    <!-- EditHostActivity: the per-host hand-off switch is gone (v0.2.5) -->
+    <string name="open_mode_settings_hint">打开方式（外部浏览器 / 内置页面）已改为全局设置：请在主页「更多 → 设置」中切换。</string>
+
+    <!-- B path: built-in WebViewActivity (docs/app-spec.md §7.5) -->
+    <string name="webview_title">DSH 远端主机</string>
+    <string name="webview_error_title">无法打开 DSH 页面</string>
+    <string name="webview_error_rejected_token">远端拒绝了 token（可能已失效：dsh web 重启会换 token）。请在远端重新复制 dsh web 打印的 URL 更新凭证。</string>
+    <string name="webview_error_unreachable">无法通过隧道读取远端 dsh web 响应。请确认隧道仍在运行，然后重试。</string>
+    <string name="webview_error_no_cookie">远端未返回登录 cookie，无法自动登录。请确认凭证是最新的；也可在「设置」中开启「通过外部浏览器连接」后手动打开。</string>
+    <string name="webview_error_http">远端返回了 HTTP %1$d，无法自动登录。请确认凭证是否有效；也可在「设置」中开启「通过外部浏览器连接」后手动打开。</string>
+    <string name="webview_error_page">页面加载失败：%1$s</string>
+    <string name="webview_error_unknown_host">主机不存在（可能已被删除）。</string>
+    <string name="webview_error_bad_port">隧道端口无效，请回到主机列表重新点「打开」。</string>
+    <string name="webview_error_no_token">这台主机没有保存 token，无法自动登录。请先在编辑页更新 DSH 凭证。</string>
+    <string name="webview_retry">重试</string>
+    <string name="webview_edit_credential">去编辑凭证</string>
+    <string name="webview_external_failed">无法打开外部链接。</string>
+    <string name="webview_open_failed">无法打开内置页面，请重试。</string>
+    <!-- v0.2.5: collapsible top bar -->
+    <string name="webview_collapse">收起顶部横栏</string>
+    <string name="js_alert_title">提示</string>
+    <string name="js_confirm_title">确认</string>
+    <string name="js_prompt_title">输入</string>
+    <string name="js_prompt_hint">请输入</string>
+</resources>

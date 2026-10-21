@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/spacing_l"
+        android:paddingTop="@dimen/spacing_s"
+        android:paddingRight="@dimen/spacing_l"
+        android:paddingBottom="@dimen/spacing_s">
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_key_label" />
+
+        <EditText
+            android:id="@+id/edit_key_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:text="@string/field_rsa_bits" />
+
+        <RadioGroup
+            android:id="@+id/rsa_bits_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rsa_bits_2048"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rsa_bits_2048" />
+
+            <RadioButton
+                android:id="@+id/rsa_bits_3072"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_m"
+                android:checked="true"
+                android:text="@string/rsa_bits_3072" />
+
+            <RadioButton
+                android:id="@+id/rsa_bits_4096"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_m"
+                android:text="@string/rsa_bits_4096" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/generate_key_explanation"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

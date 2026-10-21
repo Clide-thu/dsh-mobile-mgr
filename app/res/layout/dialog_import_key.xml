@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/spacing_l"
+        android:paddingTop="@dimen/spacing_s"
+        android:paddingRight="@dimen/spacing_l"
+        android:paddingBottom="@dimen/spacing_s">
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_key_label" />
+
+        <EditText
+            android:id="@+id/edit_import_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:text="@string/field_import_private_key" />
+
+        <EditText
+            android:id="@+id/edit_import_private_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:fontFamily="monospace"
+            android:gravity="top|start"
+            android:importantForAutofill="noExcludeDescendants"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:minLines="5"
+            android:saveEnabled="false"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/btn_pick_private_file"
+            style="@style/SecondaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="@string/import_key_file" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:text="@string/field_import_passphrase" />
+
+        <EditText
+            android:id="@+id/edit_import_passphrase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="noExcludeDescendants"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:saveEnabled="false"
+            android:singleLine="true" />
+
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:text="@string/field_import_public_key" />
+
+        <EditText
+            android:id="@+id/edit_import_public_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:fontFamily="monospace"
+            android:gravity="top|start"
+            android:importantForAutofill="noExcludeDescendants"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:minLines="2"
+            android:saveEnabled="false"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/text_import_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:lineSpacingExtra="2dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

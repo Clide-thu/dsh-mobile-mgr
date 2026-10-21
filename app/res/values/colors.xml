@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#0B3D2E</color>
+    <color name="brand">#0B3D2E</color>
+    <color name="brand_light">#17805C</color>
+    <color name="status_ok">#17805C</color>
+    <color name="status_warn">#B26A00</color>
+    <color name="status_error">#B3261E</color>
+    <color name="text_primary">#1B1B1B</color>
+    <color name="text_secondary">#5F6368</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="background">#F6F7F9</color>
+    <color name="card_stroke">#E3E6EA</color>
+    <color name="status_ok_bg">#E1F2E9</color>
+    <color name="status_warn_bg">#FDF0DC</color>
+    <color name="status_error_bg">#FBE9E7</color>
+    <color name="chip_neutral_bg">#ECEFF1</color>
+    <color name="chip_neutral_text">#455A64</color>
+    <color name="app_bar_subtitle">#CCFFFFFF</color>
+    <color name="scrim">#66000000</color>
+</resources>

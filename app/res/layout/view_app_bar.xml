@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reusable in-layout top bar (v0.2.0). It replaces the platform ActionBar so
+  that content is always a sibling below it in a vertical layout and can never
+  be overlaid, even when Android 15 forces edge-to-edge.
+
+  Inset contract: XML carries no top padding; UiInsets adds the status-bar
+  inset to this view's paddingTop at runtime (brand colour then extends behind
+  the status bar).
+
+  v0.2.5: appbar_collapse is the optional "collapse" action of the built-in
+  WebView screen (gone everywhere else). It sits between the title group and
+  appbar_more; WebViewActivity shows it only while the global setting is on.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/brand"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
+
+    <ImageButton
+        android:id="@+id/appbar_back"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:src="@drawable/ic_arrow_back"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:id="@+id/appbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/surface"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/appbar_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/app_bar_subtitle"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/appbar_collapse"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/webview_collapse"
+        android:src="@drawable/ic_collapse"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/appbar_more"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/menu_more"
+        android:src="@drawable/ic_more_vert"
+        android:visibility="gone" />
+</LinearLayout>
